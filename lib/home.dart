@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
 
   loadModel() async {
     await Tflite.loadModel(
-      model: 'assets/model_unquant.tflite',
+      model: 'assets/model.tflite',
       labels: 'assets/labels.txt',
     );
   }
@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
             Text('Teachable Machine CNN', style: TextStyle(fontSize: 18)),
             SizedBox(height: 6),
             Text(
-              'Detect Dogs & Cats',
+              'Detect Flowers',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 40),
@@ -115,7 +115,7 @@ class _HomeState extends State<Home> {
                     SizedBox(height: 20),
                     _output != null
                         ? Text(
-                      'This is a: ${_output[0]['label'].split(' ')[1]}',
+                      '${_output[0]['label']}',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
